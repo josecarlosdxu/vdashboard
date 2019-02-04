@@ -1,0 +1,124 @@
+/*
+
+Proportions utility
+========
+
+Responsive proportions avaiable at every breakpoint.
+
+We're using a 5% increment system without columns to keep the design free of constrains.
+This is important when designing interfaces as the column system fails at the micro level
+when designing interfaces.
+
+*/
+
+$steps: 20;
+
+//Thirds, Sixths, Sevenths, full
+$customWidths: (
+    100:   1,
+    3rd:   0.3333333333333333,
+    6th:   0.1666666666666667,
+    7th:   0.1428571428571429,
+    8th:   0.125
+    );
+
+//generates all available widths using the given steps and breakpoints
+@mixin createWidths() {
+    @each $bkName, $bkSize in $breakpoints {
+        //For every breakpoint defined in variables
+        @include addMedia($bkName,$bkSize) {
+
+            // By Step
+            @for $key from 1 to $steps {
+
+                //Create the className interpolating breakpoint name for every step.
+                $tmpSize: $bkName + "-" + floor($key / $steps*100);
+
+                // Si quisiéramos acotar las proporciones al módulo del grid podríamos cambiar esta línea por
+                // $tmpSize: ".modularGrid-module" + $bkName + "-" + floor($key / $steps*100);
+                // Para que nos genere algo del estilo .modularGrid-module.u-xs-50
+                // Así no se podrá usar fuera de un modulo y no habría problemas con el font-size y
+                // el whitespace.
+
+                @include utility(#{$tmpSize}) {
+                    width: percentage($key / $steps);
+                }
+            }
+
+            // By custom widths
+            @each $width, $size in $customWidths {
+                //Create the className interpolating breakpoint name for customWidth
+                $tmpSize: $bkName + "-" + $width;
+
+                @include utility(#{$tmpSize}) {
+                    width: percentage($size);
+                }
+            }
+        }
+    }
+}
+
+@include createWidths();
+
+// margin
+
+
+@each $size, $value in $sizes {
+
+  .m-#{$size} {
+      margin:$value;     
+  }
+  .mt-#{$size} {
+      margin-top:$value;     
+  }  
+
+  .mb-#{$size} {
+    margin-bottom: $value;
+   
+  }
+  .ml-#{$size} {
+    margin-left: $value;
+  
+  }
+  .mr-#{$size} {
+    margin-right: $value;
+    
+  }
+  .mx-#{$size} {
+    margin-right: $value;
+    margin-left: $value;
+    
+  }
+  .my-#{$size} {
+    margin-top: $value;
+    margin-bottom: $value;   
+  }
+  .p-#{$size} {
+      padding:$value;     
+  }
+  .pt-#{$size} {
+      padding-top:$value;     
+  }  
+
+  .pb-#{$size} {
+    padding-bottom: $value;
+   
+  }
+  .pl-#{$size} {
+    padding-left: $value;
+  
+  }
+  .pr-#{$size} {
+    padding-right: $value;
+    
+  }
+  .px-#{$size} {
+    padding-right: $value;
+    padding-left: $value;
+    
+  }
+  .py-#{$size} {
+    padding-top: $value;
+    padding-bottom: $value;   
+  }
+}

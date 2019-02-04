@@ -1,0 +1,72 @@
+//  http://chris.house/blog/why-css-custom-properties-are-awesome/
+
+//  https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care
+
+//  https://css-tricks.com/responsive-data-table-roundup/
+
+:root { 
+  --cap: 12px;
+
+}
+
+
+// Sucesión de Fibonacci
+
+$spacer-none: 0; // 0
+$spacer-3xs: calc(var(--cap)  / 4); // 2px
+$spacer-2xs: calc(var(--cap)  / 3); // 4px
+$spacer-xs: calc(var(--cap) / 2); // 6px
+$spacer-sm: calc(var(--cap) / 1.2); // 10px
+$spacer-md: calc(var(--cap) * 1.33333); // 16px
+$spacer-lg: calc(var(--cap) * 2.166666);  // 26px
+$spacer-xl: calc(var(--cap) * 3.5);  // 42px 
+$spacer-2xl: calc(var(--cap) * 5.666666);  // 68px*/
+
+
+
+$sizes: (
+  none: $spacer-none,
+  3xs:$spacer-3xs,
+  2xs: $spacer-2xs,
+  xs: $spacer-xs,
+  sm: $spacer-sm,
+  md: $spacer-md, 
+  lg: $spacer-lg,
+  xl: $spacer-xl,
+  2xl: $spacer-2xl
+);
+
+
+
+
+//namespace
+$nm: "";
+//Debug classes are created if true
+$debug: false;
+//Magic numbers
+//Module used in margin and paddings accros the framework to keep the ratio
+$unit-base: 12px;
+$unit-mod: 1.5rem;
+//Short alias for unit-mod
+$um: $unit-mod;
+//Vertical rythm
+$base-font-size: $unit-base !default;
+$base-line-height: 1.2 !default;
+//Breakpoints
+$breakpoints:( 2xs: 320px, xs: 360px, sm: 480px, md: 768px, lg: 1024px, xl: 1200px, 2xl: 1400px);
+
+//$rootImageSrc: "../../../bundles/app/img/";
+
+
+
+
+
+
+
+
+
+
+
+
+
+

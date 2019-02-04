@@ -1,0 +1,39 @@
+@import "it1-settings/settings";
+@import "it2-tools/tools";
+@import "it3-generic/generic";
+@import "it4-base/base";
+@import "it5-objects/objects";
+@import "it6-components/components";
+@import "it7-theme/theme";
+@import "it8-trumps/trumps";
+@import "it9-utils/utils";
+
+
+
+
+
+
+p[class*="m"]{
+
+	
+	//margin-top: $spacer-2xs;
+	font-size: 0.75rem;
+	background-color: silver;
+	padding: 0.2rem;
+	
+	display: inline-flex;
+	vertical-align: top;
+	//border: 1px solid red;
+	/*margin-top: 1.866ex;
+	margin-top: $spacer-2xs;
+	margin-top: $spacer-xs;
+	margin-top: $spacer-sm; 
+	margin-top: $spacer-md;
+	margin-top: $spacer-lg;
+	margin-top: $spacer-xl;
+
+	margin-top: $spacer-2xl;*/
+
+
+
+}

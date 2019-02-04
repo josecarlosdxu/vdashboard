@@ -1,0 +1,21 @@
+@include block(t_logo) {
+    height: var(--headerHeight);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+   
+    font-size: $spacer-md;
+    line-height: 1;
+    padding: $spacer-md;
+
+    color: white;
+    cursor: default;
+    user-select: none;
+
+    img {
+
+        margin: $spacer-xs;
+
+    }
+
+}

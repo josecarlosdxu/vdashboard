@@ -1,0 +1,19 @@
+@include block(t_content) {
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+    padding: $spacer-lg;
+
+
+
+
+    @include element(header) {}
+
+    @media (max-width: calc(#{$navbarWidth} * 2)) {
+        display: block;
+        width: 100%;
+        
+
+
+    }
+
+}

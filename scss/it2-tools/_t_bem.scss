@@ -1,0 +1,108 @@
+/*
+
+BEM utility toolset
+===================
+
+These classes allow the creation of blocks, elements and modifiers using a common syntax pattern.
+It also ensures you can extend elements in a OOCSS way without losing the syntax scope.
+
+//TODO add namespacing to
+
+*/
+
+
+$experimental_blockList: () !global;
+
+// Var needed to check the state of an extend
+$blockExtend: false;
+$elementExtend: false;
+// Reference of the current block/element being extended
+$blockExtended: "";
+$elementExtend: "";
+
+@mixin block($name) {
+
+    //Using the namespace create a new module
+    //nm-moduleName
+
+    @at-root .#{$name} , %#{$name} {
+        @content;
+    }
+}
+
+
+@mixin element($name,$placeholder:false) {
+
+    //Create a component inside a module
+    //nm-moduleName-componentName
+
+    //We first need to check if an extend is going to apply the correct block-level /element-level modifier
+
+   @if $placeholder == true {
+        @at-root %#{$name} {
+            @content;
+        }
+    }
+
+
+
+
+    @if $blockExtend == true {
+        @at-root & .#{$blockExtended}-#{$name} {
+            @content;
+        }
+    }
+
+    @else if $elementExtend == true {
+        @at-root & .#{$blockExtended}-#{$name} {
+            @content;
+        }
+    }
+    @else {
+        @at-root &-#{$name} {
+            @content;
+        }
+    }
+}
+
+@mixin modifier($name) {
+
+    @at-root &--#{$name} {
+        @content;
+    }
+}
+
+@mixin utility($name) {
+
+    @at-root %u-#{$name} {
+        @content;
+    }
+
+    @at-root .u-#{$name} {
+        @content;
+    }
+}
+
+@mixin extendBlock($blockExtended,$name) {
+
+    $blockExtend: true !global;
+    $blockExtended: $blockExtended !global;
+
+    @at-root .#{$blockExtended}--#{$name} {
+        @content;
+    }
+    $blockExtend: false !global;
+}
+
+@mixin extendElement($blockExtended,$elementExtended,$name) {
+
+    $elementExtend: true !global;
+    $elementExtended: $elementExtended !global;
+
+    $blockExtended: $blockExtended !global;
+
+    @at-root .#{$blockExtended}-#{$elementExtended}--#{$name} {
+        @content;
+    }
+    $elementExtend: false !global;
+}

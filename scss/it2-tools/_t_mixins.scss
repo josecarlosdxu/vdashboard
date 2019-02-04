@@ -1,0 +1,14 @@
+
+@mixin utility($name) {
+
+    @at-root %u-#{$name} {
+        @content;
+    }
+
+    @at-root .u-#{$name} {
+        @content;
+    }
+}
+
+
+

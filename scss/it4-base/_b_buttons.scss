@@ -1,0 +1,23 @@
+button {
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none;
+        box-shadow: none;
+    }
+    &:active {}
+}
+
+%buttonClear{
+	background: transparent;
+	border:none;
+	box-shadow: none;
+	outline: none;
+	&:hover,
+    &:focus,
+    &:active {
+        outline: none;
+        box-shadow: none;
+    }
+
+}

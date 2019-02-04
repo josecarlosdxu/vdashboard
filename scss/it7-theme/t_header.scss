@@ -1,0 +1,35 @@
+@include block(t_header){
+	grid-column: 2 / 2;
+    grid-row: 1;
+
+	border-bottom: 1px solid #e6e8ef;
+	background-color: white;
+	height:var(--headerHeight);
+	padding: 18px 22px 22px;
+	width: auto;
+	
+
+
+	@include element(menu) {
+		width: 24px;
+		height: 24px;
+		display: inline-block;
+	}
+
+	@include element(search){
+		@extend %buttonClear;
+		width: $spacer-lg;
+		height: $spacer-lg;
+		padding: $spacer-3xs;
+	}
+
+	 @media (max-width: calc(#{$navbarWidth} * 2)) {
+        display:block;
+        width: 100%;
+       
+
+
+    }
+
+
+}

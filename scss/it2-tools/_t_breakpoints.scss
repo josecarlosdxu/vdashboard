@@ -1,0 +1,26 @@
+@mixin addMedia($bkName,$bkSize) {
+    @media screen and (min-width: $bkSize) {
+        @content;
+    }
+}
+
+@mixin addBreakpoint($currentBkName) {
+
+    @each $bkName, $bkSize in $breakpoints {
+
+        @if ($currentBkName == $bkName) {
+            //For every breakpoint defined in variables
+            @include addMedia($bkName,$bkSize) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin browser($browsers) {
+  @each $browser in $browsers {
+    html[data-browser*="#{$browser}"] & {
+      @content;
+    }
+  }
+}
