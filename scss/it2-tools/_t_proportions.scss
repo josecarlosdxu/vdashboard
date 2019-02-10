@@ -5,8 +5,7 @@ Proportions utility
 
 Responsive proportions avaiable at every breakpoint.
 
-We're using a 5% increment system without columns to keep the design free of constrains.
-This is important when designing interfaces as the column system fails at the micro level
+We're using a 5% increment system without columns to keep the design free of constrains.This is important when designing interfaces as the column system fails at the micro level
 when designing interfaces.
 
 */
@@ -115,4 +114,5 @@ $customWidths: (3rd: 3,
         padding-top: $value;
         padding-bottom: $value;
     }
+
 }

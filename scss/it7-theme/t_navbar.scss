@@ -8,13 +8,11 @@
     display: block;
     overflow: hidden;
 
-
     & nav {
         svg {
             height: 18px;
             width: 18px;
-            color:var(--navBarSelectedBorderColor);
-
+            color: var(--navBarSelectedBorderColor);
         }
 
         a {
@@ -29,8 +27,6 @@
             background-color: var(--navBarBgColor);
             overflow: hidden;
             align-items: center;
-
-
 
             &:before {
                 content: "";
@@ -57,14 +53,9 @@
                     transform: translateX(0);
                     transition: all 0.2s ease-out;
                 }
-
             }
 
-
-
-
             &:not([href]) {
-
                 cursor: default;
                 user-select: none;
 
@@ -72,7 +63,6 @@
                     opacity: 1;
                     transform: translateX(0);
                 }
-
             }
         }
     }
@@ -82,7 +72,5 @@
         display: block;
         height: auto;
         max-height: 30rem;
-
-
     }
 }
