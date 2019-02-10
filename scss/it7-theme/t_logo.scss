@@ -1,12 +1,13 @@
 @include block(t_logo) {
-    height: var(--headerHeight);
+
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-   
+
     font-size: $spacer-md;
     line-height: 1;
-    padding: $spacer-md;
+    font-weight: 500;
+    padding: $spacer-sm;
 
     color: white;
     cursor: default;
