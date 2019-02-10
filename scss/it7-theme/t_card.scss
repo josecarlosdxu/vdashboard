@@ -1,0 +1,12 @@
+@include block(t_card) {
+    background-color: white;
+    display: inline-block;
+    border: $borderColor;
+    padding: $spacer-md;
+    width: 100%;
+    flex-grow: 1;
+    word-break: break-all;
+    font-size: 0.75rem;
+    font-weight: 300;
+    margin: 0;
+}

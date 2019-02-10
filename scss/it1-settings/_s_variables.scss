@@ -4,7 +4,7 @@
 
 //  https://css-tricks.com/responsive-data-table-roundup/
 
-:root { 
+:root {
   --cap: 12px;
 
 }
@@ -19,8 +19,21 @@ $spacer-xs: calc(var(--cap) / 2); // 6px
 $spacer-sm: calc(var(--cap) / 1.2); // 10px
 $spacer-md: calc(var(--cap) * 1.33333); // 16px
 $spacer-lg: calc(var(--cap) * 2.166666);  // 26px
-$spacer-xl: calc(var(--cap) * 3.5);  // 42px 
+$spacer-xl: calc(var(--cap) * 3.5);  // 42px
 $spacer-2xl: calc(var(--cap) * 5.666666);  // 68px*/
+
+
+$breakpoints:(
+  xxs:     0px,
+  xs:    320px,
+  sm:    480px,
+  md:    768px,
+  ls:    940px,
+  lg:    1024px,
+  xl:    1200px,
+  xxl:   1400px
+
+  );
 
 
 
@@ -30,11 +43,11 @@ $sizes: (
   2xs: $spacer-2xs,
   xs: $spacer-xs,
   sm: $spacer-sm,
-  md: $spacer-md, 
+  md: $spacer-md,
   lg: $spacer-lg,
   xl: $spacer-xl,
   2xl: $spacer-2xl
-);
+  );
 
 
 

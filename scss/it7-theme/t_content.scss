@@ -1,19 +1,32 @@
 @include block(t_content) {
     grid-column: 2 / 2;
     grid-row: 2 / 2;
-    padding: $spacer-lg;
+    padding: $spacer-sm;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
 
 
+    @include element(header) {
+        width: 100%;
+        height: auto;
+        padding:  $spacer-sm $spacer-sm 0;
+    }
+
+    @include element(title) {
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    @include element(area) {
+        padding: $spacer-sm;
+        width: 100%;
 
 
-    @include element(header) {}
+      }
 
     @media (max-width: calc(#{$navbarWidth} * 2)) {
         display: block;
         width: 100%;
-        
-
-
     }
-
 }

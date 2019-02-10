@@ -1,35 +1,42 @@
-@include block(t_header){
+@include block(t_header) {
 	grid-column: 2 / 2;
-    grid-row: 1;
-
-	border-bottom: 1px solid #e6e8ef;
+	grid-row: 1;
+	border-bottom:  $borderColor;
 	background-color: white;
-	height:var(--headerHeight);
-	padding: 18px 22px 22px;
+	padding:  $spacer-md $spacer-lg;
 	width: auto;
-	
-
+	display: inline-block;
+	display:flex;
+	align-items: center;
 
 	@include element(menu) {
 		width: 24px;
 		height: 24px;
 		display: inline-block;
+		margin-right: $spacer-xs;
+
+		&:before {
+			@extend %beforeAfter;
+			width: 0;
+			height: 0;
+			border: 4px solid transparent;
+			border-right-color: #3a70ff;
+			left: -9px;
+			top: 8px;
+		}
 	}
 
-	@include element(search){
+	@include element(search) {
 		@extend %buttonClear;
 		width: $spacer-lg;
 		height: $spacer-lg;
 		padding: $spacer-3xs;
 	}
 
-	 @media (max-width: calc(#{$navbarWidth} * 2)) {
-        display:block;
-        width: 100%;
-       
-
-
-    }
-
-
+	@media (max-width: calc(#{$navbarWidth} * 2)) {
+		display: block;
+		width: 100%;
+	}
 }
+
+#toggle:checked ~ .t_header .t_header-menu { transform: scaleX(-1) translateX(8px);}
