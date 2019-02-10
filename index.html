@@ -63,13 +63,13 @@
         </header>
         <aside class="t_navbar">
             <a class="t_logo"> <img class="t_logo-image" src="images/logo.png" alt=""> Merkury</a>
-            <nav>
-                <a><svg class="mr-3xs"><use xlink:href="#home"/></svg>Home</a>
-                <a href="#"><svg class="mr-2xs"><use xlink:href="#workflow"/></svg>Workflow</a>
-                <a href="#"><svg class="mr-2xs"><use xlink:href="#chart"/></svg>Statistics</a>
-                <a href="#"><svg class="mr-2xs"><use xlink:href="#calendar"/></svg>Calendar</a>
-                <a href="#"><svg class="mr-2xs"><use xlink:href="#user"/></svg>Users</a>
-                <a href="#"><svg class="mr-2xs"><use xlink:href="#settings"/></svg>Settings</a>
+            <nav class="t_navbar-links">
+                <a  class="t_navbar-item"><svg class="t_navbar-icon mr-xs"><use xlink:href="#home"/></svg>Home</a>
+                <a  class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs"><use xlink:href="#workflow"/></svg>Workflow</a>
+                <a  class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs"><use xlink:href="#chart"/></svg>Statistics</a>
+                <a  class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs"><use xlink:href="#calendar"/></svg>Calendar</a>
+                <a  class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs"><use xlink:href="#user"/></svg>Users</a>
+                <a  class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs"><use xlink:href="#settings"/></svg>Settings</a>
             </nav>
         </aside>
         <section class="t_content">
@@ -77,22 +77,53 @@
                 <h1 class="t_content-title">Hello world</h1>
             </header>
             <article class="t_content-area u-md-40">
-                <div class="t_card">f899hfhf</div>
+                <div class="t_card px-md py-xl">f899hfhf</div>
             </article>
-            <article class="t_content-area u-md-30">
-                <div class="t_card">888hfhf</div>
-            </article>
-            <article class="t_content-area u-md-30">
-                <div class="t_card">888hfhf</div>
+            <article class="t_content-area u-md-60">
+                <div class="t_card px-md py-xl">888hfhf</div>
             </article>
             <article class="t_content-area u-md-3rd">
-                <div class="t_card">888hfhf</div>
+                <div class="t_task">
+                    <header class="t_task-header"><h3 class="t_task-title">Tasks</h3>
+                        <section class="t_task-advices">
+                            <button class="t_task-advice" role="button">5</button>
+                            <button class="t_task-advice t_task-advice--errors" role="button">10</button>
+                        </section>
+                    </header>
+                    <ul class="t_task-list">
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="fake" alt="M" class="t_avatar-image"></button></li>
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="fake" alt="F" class="t_avatar-image"></button></li>
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="https://randomuser.me/api/portraits/men/29.jpg" alt="G" class="t_avatar-image"></button></li>
+                    </ul>
+                </div>
             </article>
             <article class="t_content-area u-md-3rd">
-                <div class="t_card">888hfhf</div>
+                <div class="t_task">
+                    <header class="t_task-header"><h3 class="t_task-title">Messages</h3>
+                        <section class="t_task-advices">
+                            <button class="t_task-advice" role="button">5</button>
+                        </section>
+                    </header>
+                    <ul class="t_task-list">
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="https://randomuser.me/api/portraits/men/19.jpg" alt="G" class="t_avatar-image"></button></li>
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="https://randomuser.me/api/portraits/men/39.jpg" alt="G" class="t_avatar-image"></button></li>
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="https://randomuser.me/api/portraits/men/9.jpg" alt="G" class="t_avatar-image"></button></li>
+                    </ul>
+                </div>
             </article>
             <article class="t_content-area u-md-3rd">
-                <div class="t_card">888hfhf</div>
+                <div class="t_task t_task--timeline">
+                    <header class="t_task-header"><h3 class="t_task-title">Activity</h3>
+                        <section class="t_task-advices">
+                            <button class="t_task-advice" role="button">100</button>
+                        </section>
+                    </header>
+                    <ul class="t_task-list">
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="https://randomuser.me/api/portraits/men/10.jpg" alt="G" class="t_avatar-image"></button></li>
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="https://randomuser.me/api/portraits/men/11.jpg" alt="G" class="t_avatar-image"></button></li>
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="https://randomuser.me/api/portraits/men/12.jpg" alt="G" class="t_avatar-image"></button></li>
+                    </ul>
+                </div>
             </article>
         </section>
     </main>

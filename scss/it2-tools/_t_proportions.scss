@@ -28,13 +28,8 @@ $customWidths: (3rd: 3,
                 //Create the className interpolating breakpoint name for every step.
                 $tmpSize: $bkName + "-"+ floor($key / $steps*100);
 
-                // Si quisiéramos acotar las proporciones al módulo del grid podríamos cambiar esta línea por
-                // $tmpSize: ".modularGrid-module" + $bkName + "-" + floor($key / $steps*100);
-                // Para que nos genere algo del estilo .modularGrid-module.u-xs-50
-                // Así no se podrá usar fuera de un modulo y no habría problemas con el font-size y
-                // el whitespace.
                 @include utility(#{$tmpSize}) {
-                   max-width: percentage($key / $steps);
+                    max-width: percentage($key / $steps);
                 }
             }
 
@@ -52,7 +47,6 @@ $customWidths: (3rd: 3,
 }
 
 @include createWidths();
-
 
 @each $size, $value in $sizes {
     .m-#{$size} {
@@ -114,5 +108,4 @@ $customWidths: (3rd: 3,
         padding-top: $value;
         padding-bottom: $value;
     }
-
 }

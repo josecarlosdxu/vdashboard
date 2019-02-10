@@ -5,9 +5,9 @@
     --cap: 12px;
 }
 
-// Sucesión de Fibonacci
+// Fibonacci
 $spacer-none: 0; // 0
-$spacer-3xs: calc(var(--cap) / 4); // 2px
+$spacer-3xs: calc(var(--cap) / 6); // 2px
 $spacer-2xs: calc(var(--cap) / 3); // 4px
 $spacer-xs: calc(var(--cap) / 2); // 6px
 $spacer-sm: calc(var(--cap) / 1.2); // 10px

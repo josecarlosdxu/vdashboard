@@ -6,11 +6,10 @@
     flex-wrap: wrap;
     align-content: flex-start;
 
-
     @include element(header) {
         width: 100%;
         height: auto;
-        padding:  $spacer-sm $spacer-sm 0;
+        padding: $spacer-md $spacer-sm $spacer-xs;
     }
 
     @include element(title) {
@@ -21,9 +20,10 @@
     @include element(area) {
         padding: $spacer-sm;
         width: 100%;
-
-
-      }
+        > *{
+            @extend %t_card;
+        }
+    }
 
     @media (max-width: calc(#{$navbarWidth} * 2)) {
         display: block;

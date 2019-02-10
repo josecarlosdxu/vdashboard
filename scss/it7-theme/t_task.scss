@@ -1,0 +1,78 @@
+@include block(t_task) {
+    background-color: $colorGray;
+
+    @include element(header) {
+        background-color: white;
+        padding: $spacer-md;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include element(title) {
+        font-weight: 400;
+        font-size: 0.8rem;
+    }
+
+    @include element(list) {
+        list-style: none;
+    }
+
+    @include element(item) {
+        border-top: $borderGray-light;
+        background-color: white;
+    }
+
+    @include element(advice) {
+        @extend %buttonClear;
+        height: $spacer-lg;
+        width: $spacer-lg;
+        border-radius: 100%;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        background-color: $pendingColor;
+        color: white;
+        font-weight: 500;
+        font-size: 0.75rem;
+        margin-left: $spacer-2xs;
+
+        @include modifier(errors) {
+            background-color: $errorColor;
+        }
+    }
+}
+
+@include extendBlock(t_task, timeline) {
+    @include element(header) {
+        border-bottom: $borderGray-light;
+    }
+
+    @include element(item) {
+        border: none;
+
+        &:before, &:after {
+            @extend %beforeAfter;
+            height: $spacer-md;
+            width: 1px;
+            left: $spacer-lg;
+            background-color: $colorGray;
+            z-index: 3;
+            transform: translateX($spacer-3xs);
+        }
+
+        &:before {
+            top: 0;
+        }
+
+        &:after {
+            top: $spacer-xl;
+        }
+
+        &:first-child:before, &:last-child:after {
+            visibility: hidden;
+        }
+    }
+}

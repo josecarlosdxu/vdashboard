@@ -1,4 +1,4 @@
-.t_navbar {
+@include block(t_navbar) {
     background-color: var(--navBarBgColor);
     height: 100%;
     width: $navbarWidth;
@@ -8,61 +8,59 @@
     display: block;
     overflow: hidden;
 
-    & nav {
-        svg {
-            height: 18px;
-            width: 18px;
-            color: var(--navBarSelectedBorderColor);
+    @include element(icon) {
+        height: 18px;
+        width: 18px;
+        color: var(--navBarSelectedBorderColor);
+    }
+
+    @include element(item) {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        border-bottom: 1px solid var(--navBarItemSeparatorColor);
+        font-size: 13px;
+        font-weight: 500;
+        padding: $spacer-md;
+        z-index: 1;
+        background-color: var(--navBarBgColor);
+        overflow: hidden;
+        align-items: center;
+
+        &:before {
+            content: "";
+            height: 100%;
+            width: calc(100% + 5px);
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 5px 0 inset var(--navBarSelectedBorderColor);
+            background-color: var(--navBarItemSelectedBgColor);
+            opacity: 0;
+            transition: all 0.2s ease-in 0.2s;
+            transform: translateX(-5px);
+            z-index: -1;
         }
 
-        a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            border-bottom: 1px solid var(--navBarItemSeparatorColor);
-            font-size: 13px;
-            font-weight: 500;
-            padding: $spacer-md;
-            z-index: 1;
-            background-color: var(--navBarBgColor);
-            overflow: hidden;
-            align-items: center;
+        &:hover,
+        &:focus {
+            outline: none;
 
             &:before {
-                content: "";
-                height: 100%;
-                width: calc(100% + 5px);
-                display: inline-block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                box-shadow: 5px 0 inset var(--navBarSelectedBorderColor);
-                background-color: var(--navBarItemSelectedBgColor);
-                opacity: 0;
-                transition: all 0.2s ease-in 0.2s;
-                transform: translateX(-5px);
-                z-index: -1;
+                opacity: 0.5;
+                transform: translateX(0);
+                transition: all 0.2s ease-out;
             }
+        }
 
-            &:hover,
-            &:focus {
-                outline: none;
+        &:not([href]) {
+            cursor: default;
+            user-select: none;
 
-                &:before {
-                    opacity: 0.5;
-                    transform: translateX(0);
-                    transition: all 0.2s ease-out;
-                }
-            }
-
-            &:not([href]) {
-                cursor: default;
-                user-select: none;
-
-                &:before {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
+            &:before {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
     }
