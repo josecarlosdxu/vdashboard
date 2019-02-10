@@ -1,6 +1,7 @@
 //----------------------
 // theme  files here
 //----------------------
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 
 
@@ -9,15 +10,21 @@
 @import "t_navbar";
 @import "t_logo";
 @import "t_content";
+@import "t_card";
 
-#toggle{ display: none;}
+body {
+   font-family: 'Roboto', sans-serif;
+    color:#0e1a35;
+}
 
-#toggle:checked + .t_navbar {
+
+
+#toggle:checked ~ .t_navbar {
 	margin-left: calc(0px - #{$navbarWidth});
 }
 
 @media (max-width: calc(#{$navbarWidth} * 2)) {
-    #toggle:checked + .t_navbar {
+    #toggle:checked ~ .t_navbar {
         margin: 0;
         max-height: 0;
     }
@@ -35,9 +42,9 @@ main {
     grid-template-rows: var(--headerHeight)  1fr;
     @media (max-width: calc(#{$navbarWidth} * 2)) {
     	display: block;
-    	
+
 
     }
 
-	
+
 }
