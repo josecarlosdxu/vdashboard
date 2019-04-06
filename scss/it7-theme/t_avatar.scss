@@ -1,7 +1,7 @@
 @include block(t_avatar) {
     @include element(button) {
         @extend %buttonClear;
-        padding: $spacer-md;
+        padding: 20px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -10,8 +10,8 @@
     }
 
     @include element(image) {
-        height: $spacer-lg;
-        width: $spacer-lg;
+        height:30px;
+        width:30px;
         border-radius: 100%;
 
         &[alt] {

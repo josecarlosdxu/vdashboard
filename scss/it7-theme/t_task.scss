@@ -1,17 +1,19 @@
+$taskHeight:  calc(#{$spacer-2xl} - #{$spacer-sm});
+
 @include block(t_task) {
     background-color: $colorGray;
 
     @include element(header) {
         background-color: white;
-        padding: $spacer-md;
+        padding: $spacer-md  $spacer-md  $spacer-md 22px;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
     @include element(title) {
-        font-weight: 400;
-        font-size: 0.8rem;
+        font-weight: 500;
+        font-size: 0.9rem;
     }
 
     @include element(list) {
@@ -21,6 +23,27 @@
     @include element(item) {
         border-top: $borderGray-light;
         background-color: white;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+
+
+    }
+
+    @include element(content) {
+        flex-grow: 1;
+
+    }
+
+    @include element(action) {
+         @extend %buttonClear;
+         cursor: pointer;
+         width: $spacer-xl;
+         height:$spacer-xl;
+         padding: $spacer-sm;
+          color: $colorGray-dark;
+
     }
 
     @include element(advice) {
@@ -43,6 +66,31 @@
             background-color: $errorColor;
         }
     }
+    @include element(itemTitle) {
+        font-weight: 400;
+
+
+    }
+    @include element(itemRemains) {
+        color: $colorGray-dark;
+        font-size: 0.7rem;
+        display: flex;
+        font-weight: 300;
+        align-items: center;
+        margin-top: $spacer-2xs;
+        &.has-error {
+            color:$errorColor;
+        }
+
+    }
+
+  @include element(icon) {
+    width: 12px;
+    height: 12px;
+    margin-right: $spacer-3xs;
+
+  }
+
 }
 
 @include extendBlock(t_task, timeline) {

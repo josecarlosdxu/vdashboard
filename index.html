@@ -47,11 +47,17 @@
             <symbol id="chart" viewBox="0 0 24 24">
                 <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99l1.5 1.5z" />
             </symbol>
+            <symbol id="vdots" viewBox="0 0 24 24">
+                <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+            </symbol>
             <symbol id="workflow" viewBox="0 0 24 24">
                 <path d="M19 5v4H4V5h15m0 10v4H4v-4h15m1-12H3c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h17c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zm0 10H3c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h17c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1z" />
             </symbol>
             <symbol id="search" viewBox="0 0 24 24">
                 <path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </symbol>
+            <symbol id="schedule" viewBox="0 0 24 24">
+                <path d="M11.99 2c-5.52 0-9.99 4.48-9.99 10s4.47 10 9.99 10c5.53 0 10.01-4.48 10.01-10s-4.48-10-10.01-10zm.01 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zM12.5 7h-1.5v6l5.25 3.15.75-1.23-4.5-2.67v-5.25z" />
             </symbol>
         </svg>
         <input type="checkbox" id="toggle" class="togglecheck">
@@ -64,12 +70,18 @@
         <aside class="t_navbar">
             <a class="t_logo"> <img class="t_logo-image" src="images/logo.png" alt=""> Merkury</a>
             <nav class="t_navbar-links">
-                <a  class="t_navbar-item"><svg class="t_navbar-icon mr-xs"><use xlink:href="#home"/></svg>Home</a>
-                <a  class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs"><use xlink:href="#workflow"/></svg>Workflow</a>
-                <a  class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs"><use xlink:href="#chart"/></svg>Statistics</a>
-                <a  class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs"><use xlink:href="#calendar"/></svg>Calendar</a>
-                <a  class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs"><use xlink:href="#user"/></svg>Users</a>
-                <a  class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs"><use xlink:href="#settings"/></svg>Settings</a>
+                <a class="t_navbar-item"><svg class="t_navbar-icon mr-xs">
+                        <use xlink:href="#home" /></svg>Home</a>
+                <a class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs">
+                        <use xlink:href="#workflow" /></svg>Workflow</a>
+                <a class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs">
+                        <use xlink:href="#chart" /></svg>Statistics</a>
+                <a class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs">
+                        <use xlink:href="#calendar" /></svg>Calendar</a>
+                <a class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs">
+                        <use xlink:href="#user" /></svg>Users</a>
+                <a class="t_navbar-item" href="#"><svg class="t_navbar-icon mr-xs">
+                        <use xlink:href="#settings" /></svg>Settings</a>
             </nav>
         </aside>
         <section class="t_content">
@@ -84,22 +96,44 @@
             </article>
             <article class="t_content-area u-md-3rd">
                 <div class="t_task">
-                    <header class="t_task-header"><h3 class="t_task-title">Tasks</h3>
+                    <header class="t_task-header">
+                        <h3 class="t_task-title">Tasks</h3>
                         <section class="t_task-advices">
                             <button class="t_task-advice" role="button">5</button>
                             <button class="t_task-advice t_task-advice--errors" role="button">10</button>
                         </section>
                     </header>
                     <ul class="t_task-list">
-                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="fake" alt="M" class="t_avatar-image"></button></li>
-                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="fake" alt="F" class="t_avatar-image"></button></li>
-                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="https://randomuser.me/api/portraits/men/29.jpg" alt="G" class="t_avatar-image"></button></li>
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="fake" alt="M" class="t_avatar-image"></button>
+                            <div class="t_task-content">
+                                <p class="t_task-itemTitle">Lorem ipsum dolor sit amets</p>
+                                <p class="t_task-itemRemains has-error"><svg class="t_task-icon">
+                                        <use xlink:href="#schedule" /></svg>Lorem ipsum dolor</p>
+                            </div>
+                            <button role="button" class="t_task-action" title="actions"><svg class="icon">
+                                    <use xlink:href="#vdots" /></svg></button>
+                        </li>
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="fake" alt="F" class="t_avatar-image"></button>
+                            <div class="t_task-content">
+                                <p class="t_task-itemTitle">Lorem ipsum dolor sit amets</p>
+                                <p class="t_task-itemRemains has-error"><svg class="t_task-icon">
+                                        <use xlink:href="#schedule" /></svg>Lorem ipsum dolor</p>
+                            </div>
+                        </li>
+                        <li class="t_task-item"><button role="button" class="t_avatar-button"><img src="https://randomuser.me/api/portraits/men/29.jpg" alt="G" class="t_avatar-image"></button>
+                            <div class="t_task-content">
+                                <p class="t_task-itemTitle">Lorem ipsum dolor sit amets</p>
+                                <p class="t_task-itemRemains"><svg class="t_task-icon">
+                                        <use xlink:href="#schedule" /></svg>Lorem ipsum dolor</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </article>
             <article class="t_content-area u-md-3rd">
                 <div class="t_task">
-                    <header class="t_task-header"><h3 class="t_task-title">Messages</h3>
+                    <header class="t_task-header">
+                        <h3 class="t_task-title">Messages</h3>
                         <section class="t_task-advices">
                             <button class="t_task-advice" role="button">5</button>
                         </section>
@@ -113,7 +147,8 @@
             </article>
             <article class="t_content-area u-md-3rd">
                 <div class="t_task t_task--timeline">
-                    <header class="t_task-header"><h3 class="t_task-title">Activity</h3>
+                    <header class="t_task-header">
+                        <h3 class="t_task-title">Activity</h3>
                         <section class="t_task-advices">
                             <button class="t_task-advice" role="button">100</button>
                         </section>
